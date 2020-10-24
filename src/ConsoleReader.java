@@ -11,10 +11,12 @@ public class ConsoleReader {
         String name = in.next();
         System.out.println("Podaj nazwisko");
         String lastName = in.next();
-        int number = 0;
+        System.out.println("Podaj poziom EASY|MEDIUM|HARD");
+        LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
 
 
-        return new Player(name,lastName,number, levelOfDifficultiesType);
+
+        return new Player(name,lastName,levelOfDifficultiesType);
 
     }
 }

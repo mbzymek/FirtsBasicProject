@@ -7,11 +7,12 @@ public class ChoosingLevel {
         this.levelOfDifficultiesType = levelOfDifficultiesType;
     }
 
-    public LevelOfDifficultiesType chooseLevel(){
+    public Enum chooseLevel(){
         Scanner in = new Scanner(System.in);
-        //System.out.println("Wybierz poziom trudności EASY|MEDIUM|HARD");
-        //LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
-        int number = 0;
+        System.out.println("Wybierz poziom trudności EASY|MEDIUM|HARD");
+        LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
+        String decision;
+        int number;
         switch (levelOfDifficultiesType)
         {
             case EASY: {
@@ -19,9 +20,10 @@ public class ChoosingLevel {
                 System.out.println("Podaj liczbe od 1 do 10");
                 number = in.nextInt();
                 if (number < 1 || number > 10) {
-                    System.out.println("Podana przez Ciebie liczba nie miesci sie w zakresie");
-                    return null;
+                    decision = "Podana przez Ciebie liczba nie miesci sie w zakresie";
                 }
+                else
+
                 break;
             }
             case MEDIUM: {
@@ -30,7 +32,6 @@ public class ChoosingLevel {
                 number = in.nextInt();
                 if (number < 1 || number > 25) {
                     System.out.println("Podana przez Ciebie liczba nie miesci sie w zakresie");
-                    return null;
                 }
                 break;
             }
@@ -40,12 +41,10 @@ public class ChoosingLevel {
                 number = in.nextInt();
                 if (number < 1 || number > 50) {
                     System.out.println("Podana przez Ciebie liczba nie miesci sie w zakresie");
-                    return null;
                 }
+                break;
             }
-            break;
         }
-
         return levelOfDifficultiesType;
     }
 }

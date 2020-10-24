@@ -1,12 +1,35 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class Scoring {
-    public int getScoring(Player player) {
-        Random random = new Random();
-        int easy = random.nextInt(10)+1;
-        int medium = random.nextInt(25)+1;
-        int hard = random.nextInt(50)+1;
 
-    return 0;
+    public int chooseNumber()
+    {
+        int i;
+        Scanner in = new Scanner(System.in);
+        i = in.nextInt();
+        return i;
+    }
+
+    public void getScoring(LevelOfDifficulties levelOfDifficulties, CalculateEasy calculateEasy,ConsoleReader consoleReader) {
+
+        int yourChoice = chooseNumber();
+        System.out.println("Your choice is: "+ yourChoice);
+        int los;
+        consoleReader.readInputParameters();
+        switch (levelOfDifficulties.getLevelOfDifficultiesType()){
+            case EASY:
+                los = calculateEasy.calculate();
+                System.out.println("los to "+los);
+                break;
+        }
+        if(yourChoice < calculateEasy.calculate()){
+            System.out.println("Your number is too small");
+        }
+        else if(yourChoice > calculateEasy.calculate()){
+            System.out.println("Your number is too big");
+        }
+        else{
+            System.out.println("Congratulations you WIN!!!");
+        }
     }
 }
