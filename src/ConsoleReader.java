@@ -11,8 +11,8 @@ public class ConsoleReader {
         String name = in.next();
         System.out.println("Podaj nazwisko");
         String lastName = in.next();
-        System.out.println("Podaj poziom EASY|MEDIUM|HARD");
-        LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
+        //System.out.println("Podaj poziom EASY|MEDIUM|HARD");
+        //LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
 
 
 
