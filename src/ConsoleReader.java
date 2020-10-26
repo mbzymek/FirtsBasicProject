@@ -1,22 +1,14 @@
 import java.util.Scanner;
 public class ConsoleReader {
     LevelOfDifficultiesType levelOfDifficultiesType;
-    public ConsoleReader(LevelOfDifficultiesType levelOfDifficultiesType)
+    LevelOfDifficulties levelOfDifficulties;
+    public ConsoleReader(LevelOfDifficultiesType levelOfDifficultiesType,LevelOfDifficulties levelOfDifficulties)
     {
         this.levelOfDifficultiesType = levelOfDifficultiesType;
+        this.levelOfDifficulties = levelOfDifficulties;
     }
     public Player readInputParameters(){
-        Scanner in = new Scanner(System.in);
-        System.out.println("Podaj imie");
-        String name = in.next();
-        System.out.println("Podaj nazwisko");
-        String lastName = in.next();
-        //System.out.println("Podaj poziom EASY|MEDIUM|HARD");
-        //LevelOfDifficultiesType levelOfDifficultiesType = LevelOfDifficultiesType.valueOf(in.next());
-
-
-
-        return new Player(name,lastName,levelOfDifficultiesType);
-
+        return new Player(levelOfDifficultiesType,levelOfDifficulties);
     }
+
 }

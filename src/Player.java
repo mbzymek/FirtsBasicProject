@@ -1,28 +1,29 @@
 public class Player {
-    private final String name;
-    private final String lastName;
-    //private final int number;
+    private  String name;
+    private  String lastName;
     private LevelOfDifficultiesType levelOfDifficultiesType;
-
-
-
-    public Player(String name, String lastName, LevelOfDifficultiesType levelOfDifficultiesType) {
+    private  LevelOfDifficulties levelOfDifficulties;
+    public Player(String name, String lastName, LevelOfDifficultiesType levelOfDifficultiesType,LevelOfDifficulties levelOfDifficulties) {
         this.name = name;
         this.lastName = lastName;
-        //this.number = number;
         this.levelOfDifficultiesType = levelOfDifficultiesType;
+        this.levelOfDifficulties = levelOfDifficulties;
+    }
+    public Player(String name,String lastName){
+        this.name = name;
+        this.lastName = lastName;
     }
 
-
-    public LevelOfDifficultiesType getLevelOfDifficulty() {
-        return levelOfDifficultiesType;
+    public Player(LevelOfDifficultiesType levelOfDifficultiesType, LevelOfDifficulties levelOfDifficulties) {
+        this.levelOfDifficultiesType = levelOfDifficultiesType;
+        this.levelOfDifficulties = levelOfDifficulties;
     }
 
-    public void setLevelOfDifficulty(LevelOfDifficultiesType level)
-    {
-        levelOfDifficultiesType = level;
+    public String getName() {
+        return name;
     }
 
-
-
+    public String getLastName() {
+        return lastName;
+    }
 }
